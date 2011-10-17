@@ -4,3 +4,8 @@ Factory.define :user do |user|
   user.password              "foobar"
   user.password_confirmation "foobar"
 end
+
+Factory.define :category do |category|
+  category.name              "Example Category"
+  category.description       "Some words to describe the Example Category"
+end
