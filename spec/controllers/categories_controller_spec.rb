@@ -43,18 +43,17 @@ describe CategoriesController do
     describe "failure" do
 
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "",
-                  :password_confirmation => "" }
+        @attr = { :name => "", :description => ""}
       end
 
-      it "should not create a user" do
+      it "should not create a category" do
         lambda do
-          post :create, :user => @attr
-        end.should_not change(User, :count)
+          post :create, :category => @attr
+        end.should_not change(Category, :count)
       end
 
       it "should render the 'new' page" do
-        post :create, :user => @attr
+        post :create, :category => @attr
         response.should render_template('new')
       end
     end
